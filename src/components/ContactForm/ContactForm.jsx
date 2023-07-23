@@ -4,20 +4,17 @@ import PropTypes from "prop-types";
 
 import css  from "./ContactForm.module.css";
 
-export class ContactForm extends Component {
+export const ContactForm = ({addContact}) => {
 
-  addContact = this.props.addContact;
-
-  onFormSubmit = (event) => {
+  const onFormSubmit = (event) => {
     event.preventDefault();
     const contactName = event.currentTarget.elements.name.value
     const contactNumber = event.currentTarget.elements.number.value
     const contactId = nanoid()
-    this.addContact(contactName, contactNumber, contactId)
+    addContact(contactName, contactNumber, contactId)
     event.currentTarget.reset()
   }
 
-  render() {
     return (
       <form className= {css.form} action="add contact" onSubmit={this.onFormSubmit}>
         <label htmlFor="name" className={css.label}>
@@ -43,7 +40,6 @@ export class ContactForm extends Component {
         <button type="submit" className= {css.btn}>Add contact</button>
     </form>
   )
-  }
 }
 
 ContactForm.propTypes = {
