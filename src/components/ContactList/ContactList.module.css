@@ -1,0 +1,21 @@
+.contactNameList {
+  list-style: none;
+  padding: 0;
+  width: 700px;
+}
+
+.contactName {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.delete {
+  background-color: rgba(255, 204, 203);
+  border: none;
+  border-radius: 15px;
+  width: 100px;
+  height: 30px;
+  color: rgb(40, 64, 48);
+  cursor: pointer;
+}
