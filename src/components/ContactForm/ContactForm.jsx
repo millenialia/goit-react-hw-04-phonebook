@@ -1,4 +1,3 @@
-import { Component } from 'react'
 import { nanoid } from 'nanoid'
 import PropTypes from "prop-types";
 
@@ -16,7 +15,7 @@ export const ContactForm = ({addContact}) => {
   }
 
     return (
-      <form className= {css.form} action="add contact" onSubmit={this.onFormSubmit}>
+      <form className= {css.form} action="add contact" onSubmit={onFormSubmit}>
         <label htmlFor="name" className={css.label}>
           Name
           <input
