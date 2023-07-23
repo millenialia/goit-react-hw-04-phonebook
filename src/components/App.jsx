@@ -18,7 +18,7 @@ export const App = () =>  {
 
   useEffect(() => {
     saveContacts();
-  }, [contacts])
+  }, [contacts, saveContacts])
 
   const filteredContacts = useMemo(
     () => contacts.filter(contact => contact.contactName.toLowerCase().includes(filter.toLowerCase())),
