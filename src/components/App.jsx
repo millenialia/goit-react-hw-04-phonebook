@@ -17,17 +17,13 @@ export const App = () =>  {
   }, []);
 
   useEffect(() => {
-    saveContacts();
-  }, [contacts, saveContacts])
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }, [contacts])
 
   const filteredContacts = useMemo(
     () => contacts.filter(contact => contact.contactName.toLowerCase().includes(filter.toLowerCase())),
     [contacts, filter]
   );
-
-  const saveContacts = () => {
-  localStorage.setItem('contacts', JSON.stringify(contacts));
-  }
 
   const addContact = (contactName, contactNumber, contactId) => {
   if (checkName(contactName)) {
